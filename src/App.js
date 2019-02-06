@@ -21,7 +21,9 @@ class App extends Component {
     let ninjas = this.state.ninjas.filter(ninja => {
       return ninja.name !== name;
     });
-    console.log(ninjas);
+    this.setState({
+      ninjas: ninjas
+    });
   };
   render() {
     return (
