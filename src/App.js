@@ -17,7 +17,12 @@ class App extends Component {
       ninjas: ninjas
     });
   };
-  deleteNinja = id => {};
+  deleteNinja = name => {
+    let ninjas = this.state.ninjas.filter(ninja => {
+      return ninja.name !== name;
+    });
+    console.log(ninjas);
+  };
   render() {
     return (
       <div className="App">
