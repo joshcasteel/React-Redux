@@ -11,12 +11,19 @@ class App extends Component {
       { name: "Crystal", age: 25, belt: "pink" }
     ]
   };
+  addNinja = ninja => {
+    let ninjas = [...this.state.ninjas, ninja];
+    this.setState({
+      ninjas: ninjas
+    });
+  };
+  deleteNinja = id => {};
   render() {
     return (
       <div className="App">
         <h1>Ninja List</h1>
-        <Ninjas ninjas={this.state.ninjas} />
-        <AddNinja />
+        <Ninjas ninjas={this.state.ninjas} deleteNinja={this.deleteNinja} />
+        <AddNinja addNinja={this.addNinja} />
       </div>
     );
   }
